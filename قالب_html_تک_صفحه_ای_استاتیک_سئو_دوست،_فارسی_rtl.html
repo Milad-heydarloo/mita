@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ====== سئو پایه ====== -->
+  <title>نام برند شما | توضیح کوتاه ارزش پیشنهادی</title>
+  <meta name="description" content="یک توضیح 140-160 کاراکتری درباره محصول/خدمت شما که واضح و جذاب باشد." />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fa_IR" />
+  <meta property="og:title" content="نام برند شما | توضیح کوتاه ارزش پیشنهادی" />
+  <meta property="og:description" content="همین توضیح متا را اینجا هم می‌توانید بگذارید." />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/og-cover.jpg" />
+  <meta property="og:image:alt" content="نمایش تصویری خدمت/محصول شما" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="نام برند شما | توضیح کوتاه ارزش پیشنهادی" />
+  <meta name="twitter:description" content="یک توضیح جذاب برای کارت توییتر." />
+  <meta name="twitter:image" content="https://example.com/og-cover.jpg" />
+
+  <!-- آیکن‌ها -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- فونت فارسی -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn/Vazirmatn-font-face.css" rel="stylesheet" />
+
+  <!-- استایل -->
+  <style>
+    :root{
+      --bg:#0f1216; --card:#151a21; --muted:#8b96a7; --text:#e8edf4; --primary:#3aaed8; --accent:#71dd8a;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:"Vazirmatn",system-ui,-apple-system,Segoe UI,Roboto; background:var(--bg); color:var(--text)}
+    a{color:var(--primary); text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%; height:auto; display:block}
+    .container{max-width:var(--maxw); margin-inline:auto; padding:0 16px}
+
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(15,18,22,0.7); border-bottom:1px solid #1f2630; z-index:20}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand img{width:36px; height:36px; border-radius:8px}
+    .brand span{font-weight:700}
+    .menu{display:flex; gap:20px}
+    .menu a{color:var(--text); opacity:.9}
+    .menu a[aria-current="page"]{color:var(--accent)}
+    .btn{display:inline-block; padding:10px 16px; border-radius:12px; background:var(--primary); color:#081017; font-weight:700}
+    .btn.secondary{background:#1f2630; color:var(--text); border:1px solid #2a3340}
+
+    .hero{padding:72px 0 32px; text-align:center}
+    .hero h1{font-size:clamp(28px,5vw,44px); margin:0 0 12px}
+    .hero p{margin:0 auto 24px; max-width:700px; color:var(--muted)}
+    .hero .cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid #263041; color:#b8c2d3; background:#141a22; font-size:13px}
+
+    section{padding:56px 0; border-top:1px solid #1f2630}
+    h2.section-title{font-size:clamp(22px,3.5vw,28px); margin:0 0 16px}
+    p.section-sub{color:var(--muted); margin:0 0 28px}
+
+    .features{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
+    .card{background:var(--card); border:1px solid #222a36; border-radius:16px; padding:18px}
+    .card h3{margin:0 0 8px; font-size:18px}
+    .card p{margin:0; color:var(--muted)}
+
+    .gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px}
+    .gallery img{border-radius:14px; border:1px solid #222a36}
+
+    .pricing{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
+    .price-card{background:linear-gradient(180deg, #18202a, #131922); border:1px solid #273142; border-radius:18px; padding:22px}
+    .price-card h3{margin:0 0 8px}
+    .price{font-size:28px; font-weight:800; margin:8px 0 16px}
+    .price small{font-size:12px; color:var(--muted)}
+    ul.clean{list-style:none; padding:0; margin:0 0 18px}
+    ul.clean li{margin:8px 0; color:#c9d3e2}
+
+    .faq{max-width:800px; margin:auto}
+    details{background:#121821; border:1px solid #222a36; border-radius:12px; padding:14px 16px; margin:10px 0}
+    summary{cursor:pointer; font-weight:700}
+    .contact{display:grid; grid-template-columns:1.2fr .8fr; gap:18px}
+    .contact form{background:var(--card); border:1px solid #222a36; border-radius:16px; padding:16px}
+    .contact form input,.contact form textarea{width:100%; background:#111722; color:var(--text); border:1px solid #223046; border-radius:10px; padding:10px; margin:8px 0}
+    .contact .info{background:#111722; border:1px solid #223046; border-radius:16px; padding:16px}
+    footer{padding:36px 0; text-align:center; color:var(--muted)}
+
+    @media (max-width:800px){
+      .menu{display:none}
+      .contact{grid-template-columns:1fr}
+    }
+
+    /* === Brand Hero (لوگو و تایپ با ماسک SVG) === */
+    .brand-hero{padding:16px 0 24px; border-top:none}
+    .brand-hero .wrap{display:flex; flex-direction:column; align-items:center; gap:16px}
+    .brand-logo{ width: min(220px, 40vw); height: min(220px, 40vw); }
+    .brand-type{ width: min(760px, 90vw); height: min(150px, 18vw); }
+
+    /* افکت سایه‌ی نرم زیر (اختیاری) */
+    .mask-shadow{ position:relative }
+    .mask-shadow::after{
+      content:""; position:absolute; inset:auto 0 -10px 0; height:24px;
+      background: radial-gradient(50% 60% at 50% 50%, rgba(0,0,0,.35), rgba(0,0,0,0) 70%);
+      filter: blur(8px); opacity:.35; pointer-events:none;
+    }
+
+    /* ===== تایپ در یک خط + کرسر ===== */
+    .type-line{
+      margin-top:2px;
+      font-size:clamp(24px,4vw,36px);
+      font-weight:800;
+      letter-spacing:.02em;
+      min-height:1.8em;
+      white-space:nowrap;
+      text-align:center;
+    }
+    .caret::after{
+      content:"|";
+      margin-inline-start:4px;
+      animation:blink 1s step-start infinite;
+    }
+    @keyframes blink{50%{opacity:0}}
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="container nav" aria-label="ناوبری اصلی">
+      <a class="brand" href="#" aria-label="خانه">
+        <img src="/logo-48.png" alt="لوگوی برند" />
+        <span>نام برند شما</span>
+      </a>
+      <nav class="menu" aria-label="منو">
+        <a href="#features">امکانات</a>
+        <a href="#gallery">تصاویر</a>
+        <a href="#pricing">تعرفه</a>
+        <a href="#faq">سوالات</a>
+        <a href="#contact">تماس</a>
+      </nav>
+      <div>
+        <a class="btn secondary" href="#pricing">شروع کنید</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Brand Hero ================= -->
+  <section class="brand-hero">
+    <div class="container wrap">
+      <!-- LOGO (type_menumita_solid.png) -->
+      <svg id="logoSvg" class="brand-logo mask-shadow" viewBox="0 0 1024 1024" width="220" height="220" aria-label="menumita logo">
+        <defs>
+          <!-- ماسک: آلفای PNG شکل را تعیین می‌کند -->
+          <mask id="logoMask" maskUnits="userSpaceOnUse">
+            <image id="logoImg" href="./images/type_menumita_solid.png" x="0" y="0" width="1024" height="1024" preserveAspectRatio="xMidYMid meet"/>
+          </mask>
+          <!-- گرادیان (با JS هماهنگ می‌شود) -->
+          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"  stop-color="#ff4d4d"/>
+            <stop offset="50%" stop-color="#4dd2ff"/>
+            <stop offset="100%" stop-color="#b84dff"/>
+          </linearGradient>
+        </defs>
+        <!-- رنگ فقط داخل ماسک دیده می‌شود -->
+        <rect x="0" y="0" width="1024" height="1024" fill="url(#logoGrad)" mask="url(#logoMask)"/>
+      </svg>
+
+      <!-- خط تایپ مرکزی -->
+      <div id="typeBox" class="type-line caret" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <main id="content">
+    <!-- بخش هیرو -->
+    <section class="hero container" id="hero">
+      <div class="badge" aria-label="نکته برجسته">
+        <span>جدید</span>
+        <span>—</span>
+        <span>سریع، امن، سئو شده</span>
+      </div>
+      <h1>تیتر اصلی با یک وعده مشخص و ارزش‌محور</h1>
+      <p>توضیح کوتاه از محصول/خدمت شما. روی یک مشکل واقعی تمرکز کنید و بگویید چگونه آن را بهتر/سریع‌تر/ارزان‌تر حل می‌کنید.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">درخواست دمو / مشاوره</a>
+        <a class="btn secondary" href="#features">مشاهده امکانات</a>
+      </div>
+    </section>
+
+    <!-- امکانات کلیدی -->
+    <section id="features">
+      <div class="container">
+        <h2 class="section-title">امکانات کلیدی</h2>
+        <p class="section-sub">سه تا شش ویژگی مهم که کاربر چرا باید شما را انتخاب کند.</p>
+        <div class="features" role="list">
+          <article class="card" role="listitem">
+            <h3>سرعت بالا</h3>
+            <p>سایت استاتیک با بهینه‌سازی تصاویر و کد برای لود بسیار سریع.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>سئو استاندارد</h3>
+            <p>تایتل، دیسکریپشن، اسکیما و ساختار هدینگ‌ها مطابق بهترین Practices.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>ریسپانسیو کامل</h3>
+            <p>نمایش عالی در موبایل، تبلت و دسکتاپ.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>قابل توسعه</h3>
+            <p>آماده اتصال به فرم‌ها، آنالیتیکس و سرویس‌های بیرونی.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- گالری/نمونه‌ها -->
+    <section id="gallery">
+      <div class="container">
+        <h2 class="section-title">نمونه‌ها / گالری</h2>
+        <p class="section-sub">چند تصویر با کپشن و alt مناسب برای سئوی تصویری.</p>
+        <div class="gallery">
+          <figure>
+            <img src="/images/sample-1.jpg" alt="تصویر نمونه شماره یک" loading="lazy" />
+            <figcaption>توضیح کوتاه درباره نمونه اول</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/sample-2.jpg" alt="تصویر نمونه شماره دو" loading="lazy" />
+            <figcaption>توضیح کوتاه درباره نمونه دوم</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/sample-3.jpg" alt="تصویر نمونه شماره سه" loading="lazy" />
+            <figcaption>توضیح کوتاه درباره نمونه سوم</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/sample-4.jpg" alt="تصویر نمونه شماره چهار" loading="lazy" />
+            <figcaption>توضیح کوتاه درباره نمونه چهارم</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- تعرفه / CTA -->
+    <section id="pricing">
+      <div class="container">
+        <h2 class="section-title">پلن‌ها و تعرفه‌ها</h2>
+        <p class="section-sub">اگر قیمت‌گذاری دارید، شفاف بیان کنید. اگر CTA است، مسیر اقدام را ساده کنید.</p>
+        <div class="pricing">
+          <div class="price-card">
+            <h3>پایه</h3>
+            <div class="price">رایگان <small>/ همیشه</small></div>
+            <ul class="clean">
+              <li>دسترسی به اطلاعات عمومی</li>
+              <li>به‌روزرسانی ماهانه</li>
+              <li>پشتیبانی ایمیلی</li>
+            </ul>
+            <a class="btn" href="#contact" aria-label="شروع پلن پایه">شروع کنید</a>
+          </div>
+          <div class="price-card">
+            <h3>حرفه‌ای</h3>
+            <div class="price">99,000 تومان <small>/ ماهانه</small></div>
+            <ul class="clean">
+              <li>امکانات کامل</li>
+              <li>بدون محدودیت</li>
+              <li>پشتیبانی سریع</li>
+            </ul>
+            <a class="btn" href="#contact" aria-label="خرید پلن حرفه‌ای">خرید</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- سوالات پرتکرار -->
+    <section id="faq">
+      <div class="container faq">
+        <h2 class="section-title">سوالات پرتکرار</h2>
+        <details>
+          <summary>چطور سفارش بدهم؟</summary>
+          <p>از طریق فرم تماس زیر پیام بدهید یا مستقیماً تماس بگیرید.</p>
+        </details>
+        <details>
+          <summary>آیا امکان سفارشی‌سازی وجود دارد؟</summary>
+          <p>بله، بر اساس نیاز شما سفارشی‌سازی انجام می‌شود.</p>
+        </details>
+        <details>
+          <summary>زمان تحویل چقدر است؟</summary>
+          <p>برای سفارش‌های استاندارد ۳ تا ۵ روز کاری.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- تماس -->
+    <section id="contact">
+      <div class="container contact">
+        <form aria-label="فرم تماس" method="post" action="https://formspree.io/f/your-id">
+          <h2 class="section-title">ارتباط با ما</h2>
+          <label for="name">نام</label>
+          <input id="name" name="name" type="text" placeholder="نام شما" required />
+
+          <label for="email">ایمیل</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" required />
+
+          <label for="msg">پیام</label>
+          <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea>
+
+          <button class="btn" type="submit">ارسال پیام</button>
+          <p style="color:var(--muted); font-size:12px; margin-top:8px">با کلیک روی ارسال، با شرایط حریم‌خصوصی موافقم.</p>
+        </form>
+        <aside class="info" aria-label="اطلاعات تماس">
+          <h3>اطلاعات تماس</h3>
+          <p>تهران، خیابان نمونه، پلاک ۱۲</p>
+          <p>تلفن: <a href="tel:+982112345678">02112345678</a></p>
+          <p>ایمیل: <a href="mailto:hello@example.com">hello@example.com</a></p>
+          <p>اینستاگرام: <a href="https://instagram.com/yourbrand" rel="me">@yourbrand</a></p>
+          <hr style="border-color:#223046" />
+          <p style="color:var(--muted); font-size:13px">ساعات پاسخ‌گویی: ۹ تا ۱۸</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="y"></span> نام برند شما — همه حقوق محفوظ است.</p>
+      <p><a href="/privacy.html">حریم خصوصی</a> · <a href="/terms.html">قوانین</a></p>
+    </div>
+  </footer>
+
+  <!-- ====== اسکریپت‌ها ====== -->
+  <script>
+    // سال جاری برای فوتر
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // اسکرول نرم لینک‌های منو (بهبود UX)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{ const id=a.getAttribute('href'); if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); }});
+    });
+  </script>
+
+  <script>
+    // پالت‌های پیشنهادی برای گرادیان لوگو
+    const PALETTES = [
+      ["#ff4d4d","#ffb84d","#4dd2ff","#b84dff"],
+      ["#71dd8a","#3aaed8","#2b6cb0","#845ef7"],
+      ["#ff8a00","#e52e71","#7f00ff","#00dbde"],
+      ["#ff416c","#ff4b2b","#ffd166","#06d6a0"],
+      ["#00c6ff","#0072ff","#7f00ff","#e100ff"]
+    ];
+
+    function pick(arr){ return arr[Math.floor(Math.random()*arr.length)] }
+
+    function paintGrad(gradEl, colors){
+      const stops = gradEl.querySelectorAll('stop');
+      const c = colors.length >= 3 ? colors : [colors[0], colors[0], colors[0]];
+      stops[0].setAttribute('stop-color', c[0]);
+      stops[1].setAttribute('stop-color', c[Math.floor(c.length/2)]);
+      stops[2].setAttribute('stop-color', c[c.length-1]);
+    }
+
+    function recolor(){
+      const shared = pick(PALETTES); // یک پالت مشترک
+      paintGrad(document.getElementById('logoGrad'), shared);
+    }
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      recolor();
+      // هر 6 ثانیه پالت گرادیان به‌صورت هماهنگ عوض می‌شود
+      setInterval(recolor, 6000);
+    });
+  </script>
+
+  <!-- افکت تایپ: فارسی (RTL) و انگلیسی (LTR) در همان خط -->
+  <script>
+    const sleep = (ms)=>new Promise(r=>setTimeout(r,ms));
+
+    async function typeText(el,text,speed){
+      el.textContent="";
+      for(let i=1;i<=text.length;i++){
+        el.textContent=text.slice(0,i);
+        await sleep(speed);
+      }
+    }
+
+    async function deleteText(el,speed){
+      for(let i=el.textContent.length;i>=0;i--){
+        el.textContent=el.textContent.slice(0,i);
+        await sleep(speed);
+      }
+    }
+
+    async function startTypeLoop(){
+      const el=document.getElementById("typeBox");
+      const items=[
+        {text:"منومیتا", dir:"rtl"},
+        {text:"menumita", dir:"ltr"}
+      ];
+      while(true){
+        for(const it of items){
+          el.style.direction = it.dir;
+          el.style.textAlign = "center";
+          await typeText(el,it.text,120);
+          await sleep(800);
+          await deleteText(el,90);
+          await sleep(400);
+        }
+      }
+    }
+    document.addEventListener("DOMContentLoaded",startTypeLoop);
+  </script>
+</body>
+</html>
