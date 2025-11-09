@@ -6,44 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- ====== سئو پایه ====== -->
-  <title>منومیتا - منو آنلاین</title>
+  <title>منومیتا | سازنده منو دیجیتال رستوران و کافه</title>
+
   <!-- آیکون وب‌سایت -->
   <link rel="icon" type="image/png" href="images/logo_menumita_final_final.png" />
   <link rel="apple-touch-icon" href="images/logo_menumita_final_final.png" />
-  <!-- SEO: توضیحات و کلیدواژه‌ها از content.js تنظیم می‌شوند -->
-  <meta name="description" content="یک توضیح 140-160 کاراکتری درباره محصول/خدمت شما که واضح و جذاب باشد." id="meta-description" />
+
+  <!-- SEO: مقادیر نهایی از content.js تزریق می‌شوند -->
+  <meta name="description" content="" id="meta-description" />
   <meta name="keywords" content="" id="meta-keywords" />
-  <!-- SEO: canonical داینامیک از CONTENT.seo.siteUrl/canonical -->
   <link rel="canonical" href="https://milad-heydarloo.github.io/mita/" id="canonical-link" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#0f1216" />
-  <!-- Google Search Console Verification -->
+  <!-- Google/Bing Verification (ثابت) -->
   <meta name="google-site-verification" content="AFcGDs3-PTiqxZ9A8NYQ0pDwIszGmxCpXPHaM7frTHI" />
-  <!-- Bing Webmaster Tools Verification -->
   <meta name="msvalidate.01" content="F9B1E0B98BA778B2624C58CC9EE313A6" />
 
-  <!-- Open Graph / Social Sharing -->
+  <!-- Open Graph / Social Sharing (تزریق از content.js) -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fa_IR" />
-  <!-- SEO: OG از content.js به‌روزرسانی می‌شود -->
-  <meta property="og:title" content="منومیتا - منو آنلاین" id="og-title" />
-    <meta property="og:description" content="منو آنلاین منومیتا با طراحی مدرن و امکانات کامل" id="og-description" />
-  <meta property="og:url" content="https://milad-heydarloo.github.io/mita/" id="og-url" />
-  <meta property="og:image" content="https://milad-heydarloo.github.io/mita/images/logo_menumita_final_final.png" id="og-image" />
-  <meta property="og:image:alt" content="نمایش تصویری خدمت/محصول شما" />
+  <meta property="og:title" content="" id="og-title" />
+  <meta property="og:description" content="" id="og-description" />
+  <meta property="og:url" content="" id="og-url" />
+  <meta property="og:image" content="" id="og-image" />
+  <meta property="og:image:alt" content="منومیتا - منو دیجیتال" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <!-- SEO: Twitter Card از content.js به‌روزرسانی می‌شود -->
-  <meta name="twitter:title" content="منومیتا - منو آنلاین" id="tw-title" />
-    <meta name="twitter:description" content="منو آنلاین منومیتا با طراحی مدرن و امکانات کامل" id="tw-description" />
-  <meta name="twitter:image" content="https://milad-heydarloo.github.io/mita/images/logo_menumita_final_final.png" id="tw-image" />
+  <meta name="twitter:title" content="" id="tw-title" />
+  <meta name="twitter:description" content="" id="tw-description" />
+  <meta name="twitter:image" content="" id="tw-image" />
 
-  <!-- آیکن‌ها -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-  <!-- فونت فارسی (preconnect + preload سبک) -->
+  <!-- فونت فارسی -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn/Vazirmatn-font-face.css" />
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn/Vazirmatn-font-face.css" rel="stylesheet" />
@@ -54,11 +48,11 @@
   <!-- استایل‌های سفارشی -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Structured Data (JSON-LD) -->
+  <!-- Structured Data (JSON-LD): پایه -->
   <script type="application/ld+json">{
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "منو میتا",
+    "name": "منومیتا",
     "url": "https://milad-heydarloo.github.io/mita/",
     "potentialAction": {
       "@type": "SearchAction",
@@ -66,27 +60,23 @@
       "query-input": "required name=search_term_string"
     }
   }</script>
-  <!-- SEO: اسکیما داینامیک اینجا تزریق می‌شود -->
+  <!-- اسکیماهای تکمیلی در زمان اجرا تزریق می‌شوند -->
   <script type="application/ld+json" id="schema-dynamic"></script>
 </head>
 <body>
   <a class="skip-link" href="#content">پرش به محتوای اصلی</a>
-  
+
   <!-- ===== هدر و ناوبری ===== -->
   <header role="banner">
     <div class="container nav" aria-label="ناوبری اصلی">
-      <a class="brand" href="#" aria-label="خانه">
+      <a class="brand" href="#hero" aria-label="خانه">
         <img src="images/logo.png" alt="لوگو منومیتا" class="brand-logo-img" />
         <span>منومیتا</span>
       </a>
 
       <!-- منوی دسکتاپ -->
       <nav class="menu" aria-label="منو">
-        <a href="#features">امکانات</a>
-        <a href="#gallery">تصاویر</a>
-        <a href="#pricing">تعرفه</a>
-        <a href="#faq">سوالات</a>
-        <a href="#contact">تماس</a>
+        <!-- با scripts.js از CONTENT.nav پر می‌شود -->
       </nav>
 
       <div class="nav-actions">
@@ -99,16 +89,11 @@
 
     <!-- منوی موبایل -->
     <nav id="mobileMenu" class="mobile-menu" aria-label="منوی موبایل" hidden>
-      <a href="#features">امکانات</a>
-      <a href="#gallery">تصاویر</a>
-      <a href="#pricing">تعرفه</a>
-      <a href="#faq">سوالات</a>
-      <a href="#contact">تماس</a>
+      <!-- با scripts.js از CONTENT.nav پر می‌شود -->
     </nav>
   </header>
 
   <!-- ===== Brand Hero ===== -->
-  <!-- SEO: سکشن برند/هیرو؛ سئوکار می‌تواند متن‌های هیرو را در content.js تنظیم کند -->
   <section class="brand-hero" aria-labelledby="brand-title" data-seo-section="brand">
     <div class="container wrap">
       <!-- LOGO (type_menumita_solid.png) -->
@@ -128,133 +113,55 @@
         <rect x="0" y="0" width="1024" height="1024" fill="url(#logoGrad)" mask="url(#logoMask)"/>
       </svg>
 
-      <!-- خط تایپ مرکزی (هم‌رنگ با لوگو) -->
       <div id="typeBox" class="type-line caret" aria-live="polite" aria-atomic="true"></div>
     </div>
   </section>
 
   <main id="content">
     <!-- بخش هیرو -->
-    <!-- SEO: محتوای هیرو از CONTENT.hero پر می‌شود -->
     <section class="hero container" id="hero" data-seo-section="hero">
-      <div class="badge" aria-label="نکته برجسته">
-        <span>سریع ، امن ، اختصاصی</span>
-      </div>
-      <h1>مدرن ترین سبک منو های آنلاین</h1>
-      <p>توضیح کوتاه از محصول/خدمت شما. روی یک مشکل واقعی تمرکز کنید و بگویید چگونه آن را بهتر/سریع‌تر/ارزان‌تر حل می‌کنید.</p>
-      <div class="cta">
-        <a class="btn primary" href="#contact">مشاوره</a>
-        <a class="btn secondary" href="#features">مشاهده امکانات</a>
-      </div>
+      <div class="badge" aria-label="نکته برجسته"><span></span></div>
+      <h1></h1>
+      <p></p>
+      <div class="cta"></div>
     </section>
 
     <!-- امکانات کلیدی -->
-    <!-- SEO: امکانات کلیدی؛ آیتم‌ها داینامیک از CONTENT.features -->
     <section id="features" aria-labelledby="features-title" data-seo-section="features">
       <div class="container">
         <h2 id="features-title" class="section-title">امکانات کلیدی</h2>
         <p class="section-sub">سه تا شش ویژگی مهم که کاربر چرا باید شما را انتخاب کند.</p>
-        <div class="features" role="list">
-          <article class="card" role="listitem">
-            <h3>سرعت بالا</h3>
-            <p>سایت استاتیک با بهینه‌سازی تصاویر و کد برای لود بسیار سریع.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3>سئو استاندارد</h3>
-            <p>تایتل، دیسکریپشن، اسکیما و ساختار هدینگ‌ها مطابق بهترین Practices.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3>ریسپانسیو کامل</h3>
-            <p>نمایش عالی در موبایل، تبلت و دسکتاپ.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3>قابل توسعه</h3>
-            <p>آماده اتصال به فرم‌ها، آنالیتیکس و سرویس‌های بیرونی.</p>
-          </article>
-        </div>
+        <div class="features" role="list"><!-- داینامیک --></div>
       </div>
     </section>
 
     <!-- گالری/نمونه‌ها -->
-    <!-- SEO: گالری؛ تصاویر با alt و caption داینامیک از CONTENT.gallery -->
     <section id="gallery" aria-labelledby="gallery-title" data-seo-section="gallery">
       <div class="container">
         <h2 id="gallery-title" class="section-title">نمونه‌ها / گالری</h2>
         <p class="section-sub">چند تصویر با کپشن و alt مناسب برای سئوی تصویری.</p>
-        <div class="gallery">
-          <figure>
-            <img src="images/mt1.png" alt="تصویر نمونه شماره یک" loading="lazy" decoding="async" width="600" height="400" />
-            <figcaption>توضیح کوتاه درباره نمونه اول</figcaption>
-          </figure>
-          <figure>
-            <img src="images/mt2.png" alt="تصویر نمونه شماره دو" loading="lazy" decoding="async" width="600" height="400" />
-            <figcaption>توضیح کوتاه درباره نمونه دوم</figcaption>
-          </figure>
-          <figure>
-            <img src="images/mt3.png" alt="تصویر نمونه شماره سه" loading="lazy" decoding="async" width="600" height="400" />
-            <figcaption>توضیح کوتاه درباره نمونه سوم</figcaption>
-          </figure>
-          <figure>
-            <img src="images/mt4.png" alt="تصویر نمونه شماره چهار" loading="lazy" decoding="async" width="600" height="400" />
-            <figcaption>توضیح کوتاه درباره نمونه</figcaption>
-          </figure>
-        </div>
+        <div class="gallery"><!-- داینامیک --></div>
       </div>
     </section>
 
     <!-- تعرفه / CTA -->
-    <!-- SEO: پلن‌ها؛ آیتم‌ها از CONTENT.pricing تزریق می‌شود -->
     <section id="pricing" aria-labelledby="pricing-title" data-seo-section="pricing">
       <div class="container">
         <h2 id="pricing-title" class="section-title">پلن‌ها و تعرفه‌ها</h2>
-        <p class="section-sub">اگر قیمت‌گذاری دارید، شفاف بیان کنید. اگر CTA است، مسیر اقدام را ساده کنید.</p>
-        <div class="pricing">
-          <div class="price-card" aria-label="پلن پایه">
-            <h3>پایه</h3>
-            <div class="price">رایگان <small>/ همیشه</small></div>
-            <ul class="clean">
-              <li>دسترسی به اطلاعات عمومی</li>
-              <li>به‌روزرسانی ماهانه</li>
-              <li>پشتیبانی ایمیلی</li>
-            </ul>
-            <a class="btn primary" href="#contact" aria-label="شروع پلن پایه">شروع کنید</a>
-          </div>
-          <div class="price-card" aria-label="پلن حرفه‌ای">
-            <h3>حرفه‌ای</h3>
-            <div class="price">99,000 تومان <small>/ ماهانه</small></div>
-            <ul class="clean">
-              <li>امکانات کامل</li>
-              <li>بدون محدودیت</li>
-              <li>پشتیبانی سریع</li>
-            </ul>
-            <a class="btn secondary" href="#contact" aria-label="خرید پلن حرفه‌ای">خرید</a>
-          </div>
-        </div>
+        <p class="section-sub">قیمت نرم‌افزار سالانه؛ هزینه سرور ماهانه قابل‌پرداخت است.</p>
+        <div class="pricing"><!-- داینامیک --></div>
       </div>
     </section>
 
     <!-- سوالات پرتکرار -->
-    <!-- SEO: سوالات پرتکرار؛ ساختار FAQPage از CONTENT.faq تولید می‌شود -->
     <section id="faq" aria-labelledby="faq-title" data-seo-section="faq">
       <div class="container faq">
         <h2 id="faq-title" class="section-title">سوالات پرتکرار</h2>
-        <details>
-          <summary>چطور سفارش بدهم؟</summary>
-          <p>از طریق فرم تماس زیر پیام بدهید یا مستقیماً تماس بگیرید.</p>
-        </details>
-        <details>
-          <summary>آیا امکان سفارشی‌سازی وجود دارد؟</summary>
-          <p>بله، بر اساس نیاز شما سفارشی‌سازی انجام می‌شود.</p>
-        </details>
-        <details>
-          <summary>زمان تحویل چقدر است؟</summary>
-          <p>برای سفارش‌های استاندارد ۳ تا ۵ روز کاری.</p>
-        </details>
+        <!-- داینامیک: details ها ساخته می‌شوند -->
       </div>
     </section>
 
     <!-- تماس -->
-    <!-- SEO: تماس؛ عنوان و توضیحات در CONTENT.contact قابل تنظیم است -->
     <section id="contact" aria-labelledby="contact-title" data-seo-section="contact">
       <div class="container contact">
         <form aria-label="فرم تماس" method="post" action="https://formspree.io/f/your-id">
@@ -269,9 +176,8 @@
           <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea>
 
           <button class="btn primary" type="submit">ارسال پیام</button>
-          <p style="color:var(--muted); font-size:12px; margin-top:8px">با کلیک روی ارسال، با شرایط حریم‌خصوصی موافقم.</p>
+          <p class="form-note" style="color:var(--muted); font-size:12px; margin-top:8px"></p>
         </form>
-        
       </div>
     </section>
   </main>
@@ -295,12 +201,12 @@
           <span class="icon" style="--icon-src: url('images/social/i5.png')"></span>
         </a>
       </div>
-      <p>© <span id="y"></span> مینومیتا — همه حقوق محفوظ است.</p>
+      <p>© <span id="y"></span> منومیتا — همه حقوق محفوظ است.</p>
       <p><a href="/privacy.html">حریم خصوصی</a> · <a href="/terms.html">قوانین</a></p>
     </div>
   </footer>
 
-  <!-- اسکریپت‌های سفارشی -->
+  <!-- اسکریپت‌های سفارشی (ترتیب مهم است) -->
   <script src="content.js"></script>
   <script src="scripts.js"></script>
 </body>

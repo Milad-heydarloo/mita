@@ -9,10 +9,10 @@
   --border: #1f2630;
   --border-light: #2a3340;
 
-  /* گرادیان مشترک لوگو و تایپ (در JS به‌روز می‌شود) */
+  /* گرادیان مشترک لوگو و تایپ */
   --g1: #ff4d4d; --g2: #4dd2ff; --g3: #b84dff;
 
-  /* تقویت رنگ/کنتراست لوگو (قابل تنظیم و برگشت) */
+  /* تقویت رنگ/کنتراست لوگو */
   --logo-boost-saturation: 1.35;
   --logo-boost-contrast: 1.15;
   --logo-boost-brightness: 1.08;
@@ -40,7 +40,9 @@ body { font-family: "Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto; bac
 a { color: var(--primary); text-decoration: none; transition: opacity var(--dur-1) var(--ease); }
 a:hover { text-decoration: underline; opacity:.9; }
 img { max-width: 100%; height: auto; display: block; }
+::selection { background: rgba(58,174,216,.25); }
 
+/* کانتینر */
 .container { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--space-4); }
 
 /* پیوند پرش برای دسترسی */
@@ -55,36 +57,18 @@ header { position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px); ba
 
 /* لوگوی تصویری در اپ‌بار */
 .brand-logo-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 50px; height: 50px; border-radius: 50%; object-fit: cover;
   border: 2px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  overflow: hidden;
-  flex-shrink: 0;
+  overflow: hidden; flex-shrink: 0;
 }
-
 .brand-logo-img:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(58, 174, 216, 0.6);
   border-color: rgba(58, 174, 216, 0.3);
 }
-
-/* تنظیمات واکنش‌گرا برای لوگو */
-@media (max-width: 768px) {
-  .brand-logo-img {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-@media (max-width: 480px) {
-  .brand-logo-img {
-    width: 42px;
-    height: 42px;
-  }
-}
+@media (max-width: 768px) { .brand-logo-img { width: 45px; height: 45px; } }
+@media (max-width: 480px) { .brand-logo-img { width: 42px; height: 42px; } }
 
 .menu { display:flex; gap: var(--space-5); }
 .menu a { color: var(--text); opacity:.9; padding-block: var(--space-2); position: relative; }
@@ -164,81 +148,36 @@ details p { margin-top: var(--space-3); color: var(--muted); }
 .contact form :where(input, textarea) { width: 100%; background:#111722; color: var(--text); border: 1px solid #223046; border-radius: 10px; padding: var(--space-3); margin-block: var(--space-2); font-family: inherit; transition: border-color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease); }
 .contact form :where(input, textarea):focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px rgba(58,174,216,.2); }
 
+/* فوتر */
 footer { padding-block: var(--space-6); text-align:center; color: var(--muted); border-top: 1px solid var(--border); }
 
-/* آیکن‌های اجتماعی در فوتر */
+/* آیکن‌های اجتماعی با ماسک و گرادیان پویا */
 .social-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-6);
-  padding-block: var(--space-5);
-  flex-wrap: nowrap;
+  display: flex; align-items: center; justify-content: center;
+  gap: var(--space-6); padding-block: var(--space-5); flex-wrap: nowrap;
 }
-.social-icons a {
-  position: relative;
-  display: inline-grid;
-  place-items: center;
-}
-.social-icons img,
-.social-icons .icon {
-  width: 40px;
-  height: 40px;
+.social-icons a { position: relative; display: inline-grid; place-items: center; }
+.social-icons img, .social-icons .icon {
+  width: 40px; height: 40px; border-radius: 10px;
   transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
-  border-radius: 10px;
 }
-
-/* آیکن رنگی با ماسک تصویر و گرادیان پویا */
 .social-icons .icon {
-  display: inline-block;
   background: linear-gradient(135deg, var(--g1), var(--g2), var(--g3));
-  /* استاندارد */
-  mask-image: var(--icon-src);
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  mask-position: center;
-  /* WebKit */
-  -webkit-mask-image: var(--icon-src);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  -webkit-mask-position: center;
+  mask-image: var(--icon-src); mask-repeat: no-repeat; mask-size: contain; mask-position: center;
+  -webkit-mask-image: var(--icon-src); -webkit-mask-repeat: no-repeat; -webkit-mask-size: contain; -webkit-mask-position: center;
 }
-.social-icons a:hover img,
 .social-icons a:hover .icon,
-.social-icons a:focus img,
-.social-icons a:focus .icon,
-.social-icons a:active img,
-.social-icons a:active .icon {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,.25);
-}
+.social-icons a:hover img { transform: translateY(-2px) scale(1.05); box-shadow: 0 6px 16px rgba(0,0,0,.25); }
 .social-icons a::after {
-  content: attr(data-label);
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 6px);
-  background: rgba(20,24,30,.9);
-  color: #fff;
-  border: 1px solid #223046;
-  border-radius: 8px;
-  padding: 6px 10px;
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: 0;
-  transform: translate(-50%, 4px);
-  pointer-events: none;
-  transition: opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
-  white-space: nowrap;
-  max-width: calc(100vw - 32px);
+  content: attr(data-label); position: absolute; left: 50%; bottom: calc(100% + 6px);
+  background: rgba(20,24,30,.9); color: #fff; border: 1px solid #223046; border-radius: 8px;
+  padding: 6px 10px; font-size: 12px; line-height: 1.4; opacity: 0; transform: translate(-50%, 4px);
+  pointer-events: none; transition: opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+  white-space: nowrap; max-width: calc(100vw - 32px);
 }
-.social-icons a:hover::after,
-.social-icons a:focus::after,
-.social-icons a:active::after {
-  opacity: 1;
-  transform: translateY(0);
-}
+.social-icons a:hover::after { opacity: 1; transform: translateY(0); }
 
-/* فرم تماس وسط‌چین با عرض مناسب و ریسپانسیو */
+/* فرم تماس وسط‌چین در موبایل */
 .contact { display: block; }
 .contact form { max-width: 640px; margin-inline: auto; }
 
@@ -249,17 +188,15 @@ footer { padding-block: var(--space-6); text-align:center; color: var(--muted); 
 .mask-shadow { position:relative; }
 .mask-shadow::after { content:""; position:absolute; inset: auto 0 -10px 0; height:24px; background: radial-gradient(50% 60% at 50% 50%, rgba(0,0,0,.35), rgba(0,0,0,0) 70%); filter: blur(8px); opacity:.35; pointer-events:none; }
 
-/* کلاس اختیاری برای تقویت رنگ لوگو (به‌سادگی قابل حذف) */
-.logo-boost {
-  filter: saturate(var(--logo-boost-saturation)) contrast(var(--logo-boost-contrast)) brightness(var(--logo-boost-brightness));
-}
+/* تقویت رنگ لوگو */
+.logo-boost { filter: saturate(var(--logo-boost-saturation)) contrast(var(--logo-boost-contrast)) brightness(var(--logo-boost-brightness)); }
 
 /* تایپ لاین */
 .type-line { margin-top: var(--space-4); font-size: clamp(24px, 4vw, 36px); font-weight: 800; letter-spacing: .02em; min-height: 1.8em; white-space: nowrap; text-align:center; background: linear-gradient(135deg, var(--g1), var(--g2), var(--g3)); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
 .caret::after { content: "|"; margin-inline-start: 4px; animation: blink 1s step-start infinite; color: currentColor; -webkit-text-fill-color: initial; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* رسپانسیو: پدینگ اپ‌بار و منوی موبایل در موبایل */
+/* رسپانسیو: اپ‌بار و منوی موبایل */
 @media (max-width: 1024px) {
   .container.nav {
     padding: calc(var(--space-4) + env(safe-area-inset-top, 0px))
