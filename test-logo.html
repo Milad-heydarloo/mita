@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تست لوگو</title>
+    <style>
+        body {
+            font-family: 'IRANSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .test-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .logo-test {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            margin: 10px;
+            display: inline-block;
+        }
+        
+        .path-test {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h2>🧪 تست مسیر لوگو</h2>
+        
+        <div class="path-test">
+            <strong>مسیر فعلی در index.html:</strong><br>
+            images/logo.png
+        </div>
+        
+        <h3>تست تصاویر:</h3>
+        
+        <!-- تست با مسیر فعلی -->
+        <div>
+            <h4>مسیر: images/logo.png</h4>
+            <img src="images/logo.png" alt="تست لوگو 1" class="logo-test" onload="this.style.border='2px solid #28a745'" onerror="this.style.border='2px solid #dc3545'; this.parentElement.innerHTML += '<br><span class=\"error\">❌ لود نشد</span>'">
+        </div>
+        
+        <!-- تست با مسیر کامل -->
+        <div>
+            <h4>مسیر: /Users/milademoun/Desktop/web/web_menumita/images/logo.png</h4>
+            <img src="/Users/milademoun/Desktop/web/web_menumita/images/logo.png" alt="تست لوگو 2" class="logo-test" onload="this.style.border='2px solid #28a745'" onerror="this.style.border='2px solid #dc3545'; this.parentElement.innerHTML += '<br><span class=\"error\">❌ لود نشد</span>'">
+        </div>
+        
+        <!-- تست با مسیر نسبی کامل -->
+        <div>
+            <h4>مسیر: ./images/logo.png</h4>
+            <img src="./images/logo.png" alt="تست لوگو 3" class="logo-test" onload="this.style.border='2px solid #28a745'" onerror="this.style.border='2px solid #dc3545'; this.parentElement.innerHTML += '<br><span class=\"error\">❌ لود نشد</span>'">
+        </div>
+        
+        <!-- تست با logo_menumita_final_final.png -->
+        <div>
+            <h4>مسیر: images/logo_menumita_final_final.png</h4>
+            <img src="images/logo_menumita_final_final.png" alt="تست لوگو 4" class="logo-test" onload="this.style.border='2px solid #28a745'" onerror="this.style.border='2px solid #dc3545'; this.parentElement.innerHTML += '<br><span class=\"error\">❌ لود نشد</span>'">
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #e8f4fd; border-radius: 10px;">
+            <h4>💡 راهنما:</h4>
+            <p>اگر هیچکدوم از تصاویر بالا لود نشدن، ممکنه مشکل از یکی از موارد زیر باشه:</p>
+            <ul style="text-align: right;">
+                <li>مسیر فایل اشتباهه</li>
+                <li>فایل وجود نداره یا نامش اشتباهه</li>
+                <li>مشکل دسترسی به فایل</li>
+                <li>کش مرورگر (با Ctrl+F5 ریفرش کنید)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
