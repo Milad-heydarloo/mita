@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تست لوگوی جدید</title>
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: #0f1216;
+            color: #e8edf4;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .test-header {
+            background: rgba(15,18,22,.7);
+            backdrop-filter: saturate(180%) blur(8px);
+            border-bottom: 1px solid #1f2630;
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .brand-logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .brand-logo-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(58, 174, 216, 0.5);
+        }
+        
+        .brand span {
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .info-box {
+            background: #151a21;
+            border: 1px solid #2a3340;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .success {
+            color: #71dd8a;
+        }
+        
+        h2 {
+            color: #3aaed8;
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .brand-logo-img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .brand-logo-img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-header">
+        <div class="container">
+            <a class="brand" href="#" aria-label="خانه">
+                <img src="images/logo.png" alt="لوگو" class="brand-logo-img" />
+                <span>نام برند شما</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="info-box">
+            <h2>✅ تغییرات اعمال شده</h2>
+            <p>لوگوی متنی در گوشه سمت راست بالا با موفقیت جایگزین شده است.</p>
+            <ul>
+                <li class="success">✓ لوگوی تصویری به جای متن قرار گرفته</li>
+                <li class="success">✓ تصویر به صورت دایره‌ای (گرد) نمایش داده می‌شود</li>
+                <li class="success">✓ افکت هاور با بزرگنمایی و سایه نورانی</li>
+                <li class="success">✓ طراحی واکنش‌گرا برای موبایل و تبلت</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h2>📱 مشخصات فنی</h2>
+            <p><strong>اندازه‌ها:</strong></p>
+            <ul>
+                <li>دسکتاپ: 40×40 پیکسل</li>
+                <li>تبلت: 35×35 پیکسل</li>
+                <li>موبایل: 32×32 پیکسل</li>
+            </ul>
+            <p><strong>ویژگی‌ها:</strong></p>
+            <ul>
+                <li>border-radius: 50% (دایره کامل)</li>
+                <li>object-fit: cover (حفظ نسبت تصویر)</li>
+                <li>transition: حالت‌های انیمیشن هنگام هاور</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h2>🎯 نکات مهم</h2>
+            <p>برای مشاهده تغییرات در سایت اصلی:</p>
+            <ol>
+                <li>فایل <code>index.html</code> را در مرورگر باز کنید</li>
+                <li>یا از دستور <code>npm run dev</code> برای سرور محلی استفاده کنید</li>
+                <li>لوگو در گوشه سمت چپ (RTL) هدر قابل مشاهده است</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
