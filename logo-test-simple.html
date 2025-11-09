@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تست لوگو - منومیتا</title>
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: #0f1216;
+            color: #e6e6e6;
+            padding: 20px;
+            text-align: center;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1a1d24;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #2a2e36;
+        }
+        .logo-test {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #444;
+            border-radius: 8px;
+            background: #15181d;
+        }
+        .brand-logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ff4d4d;
+            transition: all 0.3s ease;
+        }
+        .brand-logo-img:hover {
+            transform: scale(1.1);
+            border-color: #4dd2ff;
+            box-shadow: 0 0 20px rgba(77, 210, 255, 0.3);
+        }
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .success {
+            background: #1a4d1a;
+            color: #4dff4d;
+            border: 1px solid #4dff4d;
+        }
+        .error {
+            background: #4d1a1a;
+            color: #ff4d4d;
+            border: 1px solid #ff4d4d;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 تست لوگو منومیتا</h1>
+        <p>این صفحه برای بررسی لود شدن لوگو طراحی شده است.</p>
+        
+        <div class="logo-test">
+            <h3>تست 1: مسیر نسبی (images/logo.png)</h3>
+            <img src="images/logo.png" alt="لوگو منومیتا" class="brand-logo-img" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='✅ لوگو با موفقیت لود شد!'" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='❌ لوگو لود نشد!'">
+            <div class="status">در حال بررسی...</div>
+        </div>
+
+        <div class="logo-test">
+            <h3>تست 2: مسیر مطلق (/images/logo.png)</h3>
+            <img src="/images/logo.png" alt="لوگو منومیتا" class="brand-logo-img" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='✅ لوگو با موفقیت لود شد!'" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='❌ لوگو لود نشد!'">
+            <div class="status">در حال بررسی...</div>
+        </div>
+
+        <div class="logo-test">
+            <h3>تست 3: مسیر کامل (logo_menumita_final_final.png)</h3>
+            <img src="images/logo_menumita_final_final.png" alt="لوگو منومیتا" class="brand-logo-img" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='✅ لوگو با موفقیت لود شد!'" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='❌ لوگو لود نشد!'">
+            <div class="status">در حال بررسی...</div>
+        </div>
+
+        <div class="logo-test">
+            <h3>تست 4: مسیر کامل مطلق (logo_menumita_final_final.png)</h3>
+            <img src="/images/logo_menumita_final_final.png" alt="لوگو منومیتا" class="brand-logo-img" onload="this.nextElementSibling.className='status success'; this.nextElementSibling.textContent='✅ لوگو با موفقیت لود شد!'" onerror="this.nextElementSibling.className='status error'; this.nextElementSibling.textContent='❌ لوگو لود نشد!'">
+            <div class="status">در حال بررسی...</div>
+        </div>
+
+        <div class="logo-test">
+            <h3>مشخصات فایل logo.png</h3>
+            <p>حجم فایل: 1.7 مگابایت</p>
+            <p>تاریخ ایجاد: Oct 19 22:27</p>
+            <p>مسیر کامل: /Users/milademoun/Desktop/web/web_menumita/images/logo.png</p>
+        </div>
+    </div>
+</body>
+</html>
