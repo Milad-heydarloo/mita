@@ -1,113 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تست هدر - منومیتا</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background: #0f1216;
-            color: #e6e6e6;
-            font-family: 'Vazirmatn', sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        .test-info {
-            background: #1a1d24;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #2a2e36;
-        }
-        .debug-info {
-            background: #15181d;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            border: 1px dashed #444;
-            font-family: monospace;
-            font-size: 14px;
-        }
-    </style>
-</head>
-<body>
-    <div class="test-info">
-        <h2>🔍 تست هدر و لوگو</h2>
-        <p>اگر لوگو در هدر بالا دیده نمی‌شود، ممکن است یکی از موارد زیر مشکل داشته باشد:</p>
-        <ul>
-            <li>مسیر فایل تصویر</li>
-            <li>کش مرورگر</li>
-            <li>استایل CSS</li>
-            <li>فرمت یا خرابی فایل تصویر</li>
-        </ul>
-    </div>
-
-    <!-- هدر اصلی -->
-    <header role="banner">
-        <div class="container nav" aria-label="ناوبری اصلی">
-            <a class="brand" href="#" aria-label="خانه">
-                <img src="/images/logo.png" alt="لوگو منومیتا" class="brand-logo-img" />
-                <span>منومیتا</span>
-            </a>
-
-            <!-- منوی دسکتاپ -->
-            <nav class="menu" aria-label="منو">
-                <a href="#features">امکانات</a>
-                <a href="#gallery">تصاویر</a>
-                <a href="#pricing">تعرفه</a>
-                <a href="#faq">سوالات</a>
-                <a href="#contact">تماس</a>
-            </nav>
-
-            <div class="nav-actions">
-                <a class="btn secondary" href="#pricing">شروع کنید</a>
-            </div>
-        </div>
-    </header>
-
-    <div class="debug-info">
-        <h3>📋 اطلاعات دیباگ:</h3>
-        <p>✅ مسیر تصویر: /images/logo.png</p>
-        <p>✅ کلاس CSS: brand-logo-img</p>
-        <p>✅ ابعاد CSS: 50x50px (دسکتاپ), 45x45px (تبلت), 42x42px (موبایل)</p>
-        <p>✅ استایل: border-radius: 50% (دایره)</p>
-        <p>✅ حالت هاور: scale(1.1) + سایه آبی</p>
-    </div>
-
-    <script>
-        // بررسی لود شدن تصویر
-        const logoImg = document.querySelector('.brand-logo-img');
-        const debugInfo = document.querySelector('.debug-info');
-        
-        logoImg.onload = function() {
-            debugInfo.innerHTML += '<p style="color: #4dff4d;">✅ تصویر لوگو با موفقیت لود شد!</p>';
-            debugInfo.innerHTML += '<p>📏 ابعاد واقعی تصویر: ' + this.naturalWidth + 'x' + this.naturalHeight + 'px</p>';
-        };
-        
-        logoImg.onerror = function() {
-            debugInfo.innerHTML += '<p style="color: #ff4d4d;">❌ خطا در لود تصویر لوگو!</p>';
-            debugInfo.innerHTML += '<p>🔍 در حال بررسی مسیر فایل...</p>';
-            
-            // تست مسیرهای مختلف
-            const testPaths = [
-                'images/logo.png',
-                './images/logo.png',
-                '../images/logo.png',
-                '/images/logo.png'
-            ];
-            
-            testPaths.forEach(path => {
-                const testImg = new Image();
-                testImg.onload = function() {
-                    debugInfo.innerHTML += '<p style="color: #4dff4d;">✅ مسیر موفق: ' + path + '</p>';
-                };
-                testImg.onerror = function() {
-                    debugInfo.innerHTML += '<p style="color: #ff4d4d;">❌ مسیر ناموفق: ' + path + '</p>';
-                };
-                testImg.src = path;
-            });
-        };
-    </script>
-</body>
-</html>
