@@ -12,6 +12,11 @@
   /* گرادیان مشترک لوگو و تایپ (در JS به‌روز می‌شود) */
   --g1: #ff4d4d; --g2: #4dd2ff; --g3: #b84dff;
 
+  /* تقویت رنگ/کنتراست لوگو (قابل تنظیم و برگشت) */
+  --logo-boost-saturation: 1.35;
+  --logo-boost-contrast: 1.15;
+  --logo-boost-brightness: 1.08;
+
   /* فاصله‌ها */
   --maxw: 1100px;
   --radius-sm: 8px; --radius: 12px; --radius-lg: 16px;
@@ -167,6 +172,11 @@ footer { padding-block: var(--space-6); text-align:center; color: var(--muted); 
 .brand-logo { width: min(220px, 40vw); height: min(220px, 40vw); }
 .mask-shadow { position:relative; }
 .mask-shadow::after { content:""; position:absolute; inset: auto 0 -10px 0; height:24px; background: radial-gradient(50% 60% at 50% 50%, rgba(0,0,0,.35), rgba(0,0,0,0) 70%); filter: blur(8px); opacity:.35; pointer-events:none; }
+
+/* کلاس اختیاری برای تقویت رنگ لوگو (به‌سادگی قابل حذف) */
+.logo-boost {
+  filter: saturate(var(--logo-boost-saturation)) contrast(var(--logo-boost-contrast)) brightness(var(--logo-boost-brightness));
+}
 
 /* تایپ لاین */
 .type-line { margin-top: var(--space-4); font-size: clamp(24px, 4vw, 36px); font-weight: 800; letter-spacing: .02em; min-height: 1.8em; white-space: nowrap; text-align:center; background: linear-gradient(135deg, var(--g1), var(--g2), var(--g3)); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
