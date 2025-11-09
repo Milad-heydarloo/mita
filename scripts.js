@@ -193,13 +193,25 @@ document.addEventListener('DOMContentLoaded', function(){
     pWrap.innerHTML = '';
     C.pricing.forEach(p=>{
       const card = document.createElement('div'); card.className = 'price-card';
+      if(p.featured) { card.classList.add('featured'); }
       const h3 = document.createElement('h3'); h3.textContent = p.name || '';
+      const meta = document.createElement('div'); meta.className = 'price-meta';
+      meta.innerHTML = `${p.group ? `<small>${p.group}</small>`:''} ${p.tag ? `<small>${p.tag}</small>`:''}`;
       const price = document.createElement('div'); price.className = 'price';
       price.innerHTML = `${p.price || ''} <small>/ ${p.priceUnit || ''}</small>`;
+      // منابع سرور
+      const res = document.createElement('p'); res.textContent = p.resources || '';
+      // اعداد و جمع‌ها
+      const fmt = (n)=> typeof n==='number' ? n.toLocaleString('fa-IR') : '';
+      const totals = document.createElement('div'); totals.className = 'totals';
+      const t1 = (p.totalFirstYearRial ? `<div>جمع سال اول: ${fmt(p.totalFirstYearRial)} ریال</div>` : '');
+      const t2 = (p.totalRenewYearRial ? `<div>جمع سال تمدید: ${fmt(p.totalRenewYearRial)} ریال</div>` : '');
+      const sp = (p.serverMonthlyPayable ? `<small>پرداخت ماهانه سرور ممکن است</small>` : '');
+      totals.innerHTML = `${t1}${t2}${sp}`;
       const ul = document.createElement('ul'); ul.className = 'clean';
       (p.benefits||[]).forEach(b=>{ const li=document.createElement('li'); li.textContent=b; ul.appendChild(li); });
       const a = document.createElement('a'); a.className = 'btn ' + (p.variant === 'secondary' ? 'secondary' : 'primary'); a.href = p.buttonHref || '#'; a.textContent = p.buttonText || '';
-      card.appendChild(h3); card.appendChild(price); card.appendChild(ul); card.appendChild(a);
+      card.appendChild(h3); card.appendChild(meta); card.appendChild(price); if(p.resources) card.appendChild(res); card.appendChild(totals); card.appendChild(ul); card.appendChild(a);
       pWrap.appendChild(card);
     });
   })();

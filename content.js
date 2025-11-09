@@ -138,34 +138,159 @@ window.CONTENT = {
     },
   ],
 
-  // پلن‌ها و تعرفه‌ها: مزایا و متن دکمه‌ها
+  // پلن‌ها و تعرفه‌ها: نسخه آماده با اشتراک نرم‌افزار و جمع‌ها
   // استفاده: سکشن #pricing، کانتینر .pricing
+  // نکته پرداخت: سرور ماهانه قابل پرداخت است؛ اشتراک نرم‌افزار سالانه
   pricing: [
+    // ——— دسته: منوی نمایشی ———
     {
-      name: "پلن پایه",
-      price: "رایگان",
-      priceUnit: "ماهانه",
+      group: "منوی نمایشی",
+      name: "نمایشی — IR_VPS_01",
+      tag: "تا ۲۰۰ مشتری/روز",
+      price: "۳۲۰,۰۰۰ تومان",
+      priceUnit: "ماهانه (فقط سرور)",
+      serverMonthlyToman: 320000,
+      serverMonthlyRial: 3200000,
+      softwarePriceRial: 35000000,
+      softwareRenewRial: 17500000,
+      totalFirstYearRial: 73400000,
+      totalRenewYearRial: 55900000,
+      serverMonthlyPayable: true,
+      resources: "۱ هسته، ۲GB RAM، ۲۰GB NVMe، ۱۵۰GB ترافیک",
       benefits: [
-        "ساخت منو دیجیتال پایه",
-        "گالری محدود",
-        "پشتیبانی ایمیلی",
+        "منو دیجیتال نمایشی (بدون سفارش‌گیری)",
+        "سرور شخصی (KVM + NVMe) + فایروال",
+        "SSL و دامنه سفارشی",
+        "پشتیبانی تلفنی ۹–۱۷",
+        "راه‌اندازی: دامنه موجود ≤۱ ساعت | دو دامنه جدید ≤۷۲ ساعت",
+        "اشتراک نرم‌افزار سالانه | تمدید سال بعد: ۵۰٪"
       ],
-      buttonText: "انتخاب پلن پایه",
-      buttonHref: "#contact",
+      buttonText: "درخواست راه‌اندازی",
+      buttonHref: "#contact"
     },
     {
-      name: "پلن حرفه‌ای",
-      price: "۲۹۹ هزار تومان",
-      priceUnit: "ماهانه",
+      group: "منوی نمایشی",
+      name: "نمایشی — IR_VPS_02",
+      tag: "تا ۳۰۰ مشتری/روز",
+      price: "۳۵۵,۰۰۰ تومان",
+      priceUnit: "ماهانه (فقط سرور)",
+      serverMonthlyToman: 355000,
+      serverMonthlyRial: 3550000,
+      softwarePriceRial: 35000000,
+      softwareRenewRial: 17500000,
+      totalFirstYearRial: 77600000,
+      totalRenewYearRial: 60100000,
+      serverMonthlyPayable: true,
+      resources: "۱ هسته، ۳GB RAM، ۲۵GB NVMe، ۲۰۰GB ترافیک",
       benefits: [
-        "امکانات کامل",
-        "گالری نامحدود",
-        "سئو پیشرفته",
-        "پشتیبانی سریع",
+        "منو دیجیتال نمایشی",
+        "فایروال، SSL، دامنه سفارشی",
+        "گزارش بازدید پایه",
+        "پشتیبانی تلفنی ۹–۱۷",
+        "اشتراک نرم‌افزار سالانه | تمدید: ۵۰٪"
       ],
-      buttonText: "انتخاب پلن حرفه‌ای",
+      buttonText: "انتخاب این پلن",
       buttonHref: "#contact",
+      featured: true
     },
+    {
+      group: "منوی نمایشی",
+      name: "نمایشی — IR_VPS_03",
+      tag: "تا ۱۰۰۰ مشتری/روز",
+      price: "۴۱۵,۰۰۰ تومان",
+      priceUnit: "ماهانه (فقط سرور)",
+      serverMonthlyToman: 415000,
+      serverMonthlyRial: 4150000,
+      softwarePriceRial: 35000000,
+      softwareRenewRial: 17500000,
+      totalFirstYearRial: 84800000,
+      totalRenewYearRial: 67300000,
+      serverMonthlyPayable: true,
+      resources: "۲ هسته، ۴GB RAM، ۳۰GB NVMe، ۳۰۰GB ترافیک",
+      benefits: [
+        "منو نمایشی برای ترافیک بالا",
+        "SSL و دامنه سفارشی",
+        "پشتیبانی تلفنی ۹–۱۷",
+        "اشتراک نرم‌افزار سالانه | تمدید: ۵۰٪"
+      ],
+      buttonText: "مشاوره و خرید",
+      buttonHref: "#contact"
+    },
+
+    // ——— دسته: منو + سفارش‌گیری ———
+    {
+      group: "منو + سفارش‌گیری",
+      name: "سفارش‌گیری — IR_VPS_04",
+      tag: "تا ۱۰۰ مشتری/روز",
+      price: "۶۲۰,۰۰۰ تومان",
+      priceUnit: "ماهانه (فقط سرور)",
+      serverMonthlyToman: 620000,
+      serverMonthlyRial: 6200000,
+      softwarePriceRial: 70000000,
+      softwareRenewRial: 35000000,
+      totalFirstYearRial: 144400000,
+      totalRenewYearRial: 109400000,
+      serverMonthlyPayable: true,
+      resources: "۲ هسته، ۶GB RAM، ۵۰GB NVMe، ۴۰۰GB ترافیک",
+      benefits: [
+        "منو + سبد خرید + ثبت سفارش",
+        "مدیریت وضعیت‌ها بلادرنگ",
+        "SSL، دامنه سفارشی، فایروال",
+        "پشتیبانی تلفنی ۹–۱۷",
+        "اشتراک نرم‌افزار سالانه | تمدید: ۵۰٪"
+      ],
+      buttonText: "شروع سفارش‌گیری",
+      buttonHref: "#contact"
+    },
+    {
+      group: "منو + سفارش‌گیری",
+      name: "سفارش‌گیری — IR_VPS_05",
+      tag: "تا ۳۰۰ مشتری/روز",
+      price: "۸۶۰,۰۰۰ تومان",
+      priceUnit: "ماهانه (فقط سرور)",
+      serverMonthlyToman: 860000,
+      serverMonthlyRial: 8600000,
+      softwarePriceRial: 70000000,
+      softwareRenewRial: 35000000,
+      totalFirstYearRial: 173200000,
+      totalRenewYearRial: 138200000,
+      serverMonthlyPayable: true,
+      resources: "۴ هسته، ۱۰GB RAM، ۸۰GB NVMe، ۵۰۰GB ترافیک",
+      benefits: [
+        "منو + سفارش‌گیری (مقیاس‌پذیر)",
+        "گزارش فروش پایه",
+        "SSL، دامنه، فایروال",
+        "پشتیبانی تلفنی ۹–۱۷",
+        "اشتراک نرم‌افزار سالانه | تمدید: ۵۰٪"
+      ],
+      buttonText: "انتخاب پلن رشد",
+      buttonHref: "#contact",
+      featured: true
+    },
+    {
+      group: "منو + سفارش‌گیری",
+      name: "سفارش‌گیری — IR_VPS_06",
+      tag: "تا ۸۰۰ مشتری/روز",
+      price: "۱,۵۶۰,۰۰۰ تومان",
+      priceUnit: "ماهانه (فقط سرور)",
+      serverMonthlyToman: 1560000,
+      serverMonthlyRial: 15600000,
+      softwarePriceRial: 70000000,
+      softwareRenewRial: 35000000,
+      totalFirstYearRial: 257200000,
+      totalRenewYearRial: 222200000,
+      serverMonthlyPayable: true,
+      resources: "۶ هسته، ۱۶GB RAM، ۱۲۰GB NVMe، ۷۰۰GB ترافیک",
+      benefits: [
+        "منو + سفارش‌گیری برای ترافیک بالا",
+        "پایداری و کارایی بیشتر",
+        "گزارش فروش و لاگ‌ها",
+        "SSL، دامنه، فایروال | پشتیبانی ۹–۱۷",
+        "اشتراک نرم‌افزار سالانه | تمدید: ۵۰٪"
+      ],
+      buttonText: "پلن اسکیل",
+      buttonHref: "#contact"
+    }
   ],
 
   // سوالات متداول
