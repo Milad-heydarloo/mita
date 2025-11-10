@@ -7,11 +7,9 @@
 
   <!-- ====== سئو پایه ====== -->
   <title>منومیتا - منو آنلاین</title>
-
-  <!-- آیکون‌ها (مسیر درست برای GitHub Pages) -->
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <!-- آیکون وب‌سایت -->
+  <link rel="icon" type="image/png" href="images/logo_menumita_final_final.png" />
   <link rel="apple-touch-icon" href="images/logo_menumita_final_final.png" />
-
   <!-- SEO: توضیحات و کلیدواژه‌ها از content.js تنظیم می‌شوند -->
   <meta name="description" content="یک توضیح 140-160 کاراکتری درباره محصول/خدمت شما که واضح و جذاب باشد." id="meta-description" />
   <meta name="keywords" content="" id="meta-keywords" />
@@ -19,52 +17,71 @@
   <link rel="canonical" href="https://milad-heydarloo.github.io/mita/" id="canonical-link" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#0f1216" />
-
-  <!-- Search Console / Bing -->
+  <!-- Google Search Console Verification -->
   <meta name="google-site-verification" content="AFcGDs3-PTiqxZ9A8NYQ0pDwIszGmxCpXPHaM7frTHI" />
+  <!-- Bing Webmaster Tools Verification -->
   <meta name="msvalidate.01" content="F9B1E0B98BA778B2624C58CC9EE313A6" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fa_IR" />
+  <!-- SEO: OG از content.js به‌روزرسانی می‌شود -->
   <meta property="og:title" content="منومیتا - منو آنلاین" id="og-title" />
-  <meta property="og:description" content="منو آنلاین منومیتا با طراحی مدرن و امکانات کامل" id="og-description" />
+    <meta property="og:description" content="منو آنلاین منومیتا با طراحی مدرن و امکانات کامل" id="og-description" />
   <meta property="og:url" content="https://milad-heydarloo.github.io/mita/" id="og-url" />
   <meta property="og:image" content="https://milad-heydarloo.github.io/mita/images/logo_menumita_final_final.png" id="og-image" />
   <meta property="og:image:alt" content="نمایش تصویری خدمت/محصول شما" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
+  <!-- SEO: Twitter Card از content.js به‌روزرسانی می‌شود -->
   <meta name="twitter:title" content="منومیتا - منو آنلاین" id="tw-title" />
-  <meta name="twitter:description" content="منو آنلاین منومیتا با طراحی مدرن و امکانات کامل" id="tw-description" />
+    <meta name="twitter:description" content="منو آنلاین منومیتا با طراحی مدرن و امکانات کامل" id="tw-description" />
   <meta name="twitter:image" content="https://milad-heydarloo.github.io/mita/images/logo_menumita_final_final.png" id="tw-image" />
 
-  <!-- فونت فارسی -->
+  <!-- آیکن‌ها -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- فونت فارسی (preconnect + preload سبک) -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn/Vazirmatn-font-face.css" />
   <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn/Vazirmatn-font-face.css" rel="stylesheet" />
 
-  <!-- Preload لوگوی هیرو برای LCP بهتر -->
+  <!-- Preload لوگوی سکشن هیرو برای LCP بهتر -->
   <link rel="preload" as="image" href="images/type_menumita_solid.png" imagesrcset="images/type_menumita_solid.png 1x" imagesizes="(max-width: 600px) 60vw, 220px" />
 
-  <!-- استایل‌ها -->
+  <!-- استایل‌های سفارشی -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Structured Data (جای تزریق داینامیک) -->
-  <script type="application/ld+json" id="schema-dynamic"></script>
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "منو میتا",
+    "url": "https://milad-heydarloo.github.io/mita/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://milad-heydarloo.github.io/mita/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }</script>
 
-  <!-- Microsoft Clarity (اختیاری) -->
+
+  <!-- SEO: اسکیما داینامیک اینجا تزریق می‌شود -->
+  <script type="application/ld+json" id="schema-dynamic"></script>
+    <!-- Microsoft Clarity tracking code -->
   <script>
     (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "u3ti120vld");
   </script>
 </head>
 <body>
   <a class="skip-link" href="#content">پرش به محتوای اصلی</a>
-
+  
   <!-- ===== هدر و ناوبری ===== -->
   <header role="banner">
     <div class="container nav" aria-label="ناوبری اصلی">
@@ -101,6 +118,7 @@
   </header>
 
   <!-- ===== Brand Hero ===== -->
+  <!-- SEO: سکشن برند/هیرو؛ سئوکار می‌تواند متن‌های هیرو را در content.js تنظیم کند -->
   <section class="brand-hero" aria-labelledby="brand-title" data-seo-section="brand">
     <div class="container wrap">
       <!-- LOGO (type_menumita_solid.png) -->
@@ -127,6 +145,7 @@
 
   <main id="content">
     <!-- بخش هیرو -->
+    <!-- SEO: محتوای هیرو از CONTENT.hero پر می‌شود -->
     <section class="hero container" id="hero" data-seo-section="hero">
       <div class="badge" aria-label="نکته برجسته">
         <span>سریع ، امن ، اختصاصی</span>
@@ -140,6 +159,7 @@
     </section>
 
     <!-- امکانات کلیدی -->
+    <!-- SEO: امکانات کلیدی؛ آیتم‌ها داینامیک از CONTENT.features -->
     <section id="features" aria-labelledby="features-title" data-seo-section="features">
       <div class="container">
         <h2 id="features-title" class="section-title">امکانات کلیدی</h2>
@@ -165,7 +185,8 @@
       </div>
     </section>
 
-    <!-- گالری -->
+    <!-- گالری/نمونه‌ها -->
+    <!-- SEO: گالری؛ تصاویر با alt و caption داینامیک از CONTENT.gallery -->
     <section id="gallery" aria-labelledby="gallery-title" data-seo-section="gallery">
       <div class="container">
         <h2 id="gallery-title" class="section-title">نمونه‌ها / گالری</h2>
@@ -191,7 +212,8 @@
       </div>
     </section>
 
-    <!-- تعرفه -->
+    <!-- تعرفه / CTA -->
+    <!-- SEO: پلن‌ها؛ آیتم‌ها از CONTENT.pricing تزریق می‌شود -->
     <section id="pricing" aria-labelledby="pricing-title" data-seo-section="pricing">
       <div class="container">
         <h2 id="pricing-title" class="section-title">پلن‌ها و تعرفه‌ها</h2>
@@ -222,6 +244,7 @@
     </section>
 
     <!-- سوالات پرتکرار -->
+    <!-- SEO: سوالات پرتکرار؛ ساختار FAQPage از CONTENT.faq تولید می‌شود -->
     <section id="faq" aria-labelledby="faq-title" data-seo-section="faq">
       <div class="container faq">
         <h2 id="faq-title" class="section-title">سوالات پرتکرار</h2>
@@ -241,34 +264,51 @@
     </section>
 
     <!-- تماس -->
+    <!-- SEO: تماس؛ عنوان و توضیحات در CONTENT.contact قابل تنظیم است -->
     <section id="contact" aria-labelledby="contact-title" data-seo-section="contact">
       <div class="container contact">
-        <form id="contactForm" aria-label="فرم تماس" method="post" novalidate>
+        <!-- <form aria-label="فرم تماس" method="post" action="https://formspree.io/f/your-id">
           <h2 id="contact-title" class="section-title">ارتباط با ما</h2>
-
           <label for="name">نام</label>
-          <input id="name" name="name" type="text" placeholder="نام شما" required autocomplete="name" />
+          <input id="name" name="name" type="text" placeholder="نام شما" required />
 
-          <label for="phone">شماره تماس</label>
-          <input id="phone" name="phone" type="tel" inputmode="tel" dir="ltr"
-                 placeholder="09xxxxxxxxx" required pattern="^0?9\\d{9}$" autocomplete="tel" />
+          <label for="email">ایمیل</label>
+          <input id="email" name="email" type="email" placeholder="your-email@domain.com" required />
 
           <label for="msg">پیام</label>
-          <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required autocomplete="off"></textarea>
-
-          <!-- ضداسپم (مخفی) -->
-          <input type="text" name="honeypot" style="position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" />
-
-          <!-- اطلاعات کمکی -->
-          <input type="hidden" name="user_agent" value="" />
-          <input type="hidden" name="referrer" value="" />
-
-          <!-- Cloudflare Turnstile -->
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
+          <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea>
 
           <button class="btn primary" type="submit">ارسال پیام</button>
-          <p id="formStatus" class="muted" style="margin-top:8px"></p>
-        </form>
+          <p style="color:var(--muted); font-size:12px; margin-top:8px">با کلیک روی ارسال، با شرایط حریم‌خصوصی موافقم.</p>
+        </form> -->
+
+        
+<form id="contactForm" aria-label="فرم تماس" method="post" novalidate>
+  <h2 id="contact-title" class="section-title">ارتباط با ما</h2>
+
+  <label for="name">نام</label>
+  <input id="name" name="name" type="text" placeholder="نام شما" required />
+
+  <label for="email">ایمیل</label>
+  <input id="email" name="email" type="email" placeholder="your-email@domain.com" required />
+
+  <label for="msg">پیام</label>
+  <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea>
+
+  <!-- ضداسپم (مخفی) -->
+  <input type="text" name="honeypot" style="position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" />
+
+  <!-- اطلاعات کمکی -->
+  <input type="hidden" name="user_agent" value="" />
+  <input type="hidden" name="referrer" value="" />
+<!-- Cloudflare Turnstile widget -->
+<div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
+
+  <button class="btn primary" type="submit">ارسال پیام</button>
+  <p id="formStatus" class="muted" style="margin-top:8px"></p>
+</form>
+
+
       </div>
     </section>
   </main>
@@ -296,12 +336,11 @@
       <p><a href="/privacy.html">حریم خصوصی</a> · <a href="/terms.html">قوانین</a></p>
     </div>
   </footer>
-
-  <!-- Turnstile -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
-  <!-- اسکریپت‌های شما -->
+  <!-- اسکریپت‌های سفارشی -->
   <script src="content.js"></script>
   <script src="scripts.js"></script>
+  
 </body>
 </html>
