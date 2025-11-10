@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function(){
       const name = form.name.value.trim();
       const email = form.email.value.trim();
       const message = form.message.value.trim();
-      if (!name || !emmail || !message) {
+      if (!name || !email || !message) {
         statusEl.textContent = 'لطفاً همه فیلدها را پر کنید.';
         return;
       }
