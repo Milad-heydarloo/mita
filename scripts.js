@@ -226,6 +226,35 @@ document.addEventListener('DOMContentLoaded', function(){
   })();
 
   // تعرفه‌ها
+  (function renderPricing(){
+    const pWrap = document.querySelector('#pricing .pricing');
+    if(!pWrap || !Array.isArray(C.pricing)) return;
+    pWrap.innerHTML = '';
+    C.pricing.forEach(p=>{
+      const card = document.createElement('div'); card.className = 'price-card';
+      if(p.featured) { card.classList.add('featured'); }
+      const h3 = document.createElement('h3'); h3.textContent = p.name || '';
+      const meta = document.createElement('div'); meta.className = 'price-meta';
+      meta.innerHTML = `${p.group ? `<small>${p.group}</small>`:''} ${p.tag ? `<small>${p.tag}</small>`:''}`;
+      const price = document.createElement('div'); price.className = 'price';
+      price.innerHTML = `${p.price || ''} <small>/ ${p.priceUnit || ''}</small>`;
+      // منابع سرور
+      const res = document.createElement('p'); res.textContent = p.resources || '';
+      // اعداد و جمع‌ها
+      const fmt = (n)=> typeof n==='number' ? n.toLocaleString('fa-IR') : '';
+      const totals = document.createElement('div'); totals.className = 'totals';
+      const t1 = (p.totalFirstYearRial ? `<div>جمع سال اول: ${fmt(p.totalFirstYearRial)} ریال</div>` : '');
+      const t2 = (p.totalRenewYearRial ? `<div>جمع سال تمدید: ${fmt(p.totalRenewYearRial)} ریال</div>` : '');
+      const sp = (p.serverMonthlyPayable ? `<small>پرداخت ماهانه سرور ممکن است</small>` : '');
+      totals.innerHTML = `${t1}${t2}${sp}`;
+      const ul = document.createElement('ul'); ul.className = 'clean';
+      (p.benefits||[]).forEach(b=>{ const li=document.createElement('li'); li.textContent=b; ul.appendChild(li); });
+      const a = document.createElement('a'); a.className = 'btn ' + (p.variant === 'secondary' ? 'secondary' : 'primary'); a.href = p.buttonHref || '#'; a.textContent = p.buttonText || '';
+      card.appendChild(h3); card.appendChild(meta); card.appendChild(price); if(p.resources) card.appendChild(res); card.appendChild(totals); card.appendChild(ul); card.appendChild(a);
+      pWrap.appendChild(card);
+    });
+  })();
+
   // سوالات پرتکرار
   (function renderFAQ(){
     const faq = document.querySelector('#faq .faq');
@@ -242,40 +271,6 @@ document.addEventListener('DOMContentLoaded', function(){
       faq.appendChild(details);
     });
   })();
-
-
-
-  // === پلن انتخاب‌شده → پر شدن فیلد فرم و اسکرول به تماس
-  document.addEventListener('DOMContentLoaded', function(){
-    const pricing = document.getElementById('pricing');
-    const planInput = document.getElementById('selectedPlan');
-    const contact = document.getElementById('contact');
-
-    if (!pricing || !planInput) return;
-
-    pricing.addEventListener('click', function(e){
-      const btn = e.target.closest('.price-card a.btn');
-      if (!btn) return;
-
-      const planName =
-        btn.dataset.plan ||
-        btn.closest('.price-card')?.querySelector('h3')?.textContent?.trim() || '';
-
-      if (planName) {
-        planInput.value = planName; // ✅ مقدار پلن در input نوشته می‌شود
-      }
-
-      // اسکرول نرم به فرم تماس
-      if (contact) {
-        const y = contact.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-
-      // فوکوس روی فیلد پیام (اختیاری)
-      const msg = document.getElementById('msg');
-      if (msg) msg.focus();
-    });
-  });
 
 
 

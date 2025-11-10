@@ -267,16 +267,55 @@
     <!-- SEO: تماس؛ عنوان و توضیحات در CONTENT.contact قابل تنظیم است -->
     <section id="contact" aria-labelledby="contact-title" data-seo-section="contact">
       <div class="container contact">
-   
+        <!-- <form aria-label="فرم تماس" method="post" action="https://formspree.io/f/your-id">
+          <h2 id="contact-title" class="section-title">ارتباط با ما</h2>
+          <label for="name">نام</label>
+          <input id="name" name="name" type="text" placeholder="نام شما" required />
+
+          <label for="email">ایمیل</label>
+          <input id="email" name="email" type="email" placeholder="your-email@domain.com" required />
+
+          <label for="msg">پیام</label>
+          <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea>
+
+          <button class="btn primary" type="submit">ارسال پیام</button>
+          <p style="color:var(--muted); font-size:12px; margin-top:8px">با کلیک روی ارسال، با شرایط حریم‌خصوصی موافقم.</p>
+        </form> -->
+
         
+<!-- <form id="contactForm" aria-label="فرم تماس" method="post" novalidate>
+  <h2 id="contact-title" class="section-title">ارتباط با ما</h2> -->
+
+  <!-- <label for="name">نام</label>
+  <input id="name" name="name" type="text" placeholder="نام شما" required /> -->
+
+  <!-- <label for="email">ایمیل</label>
+  <input id="email" name="email" type="email" placeholder="your-email@domain.com" required /> -->
+
+  <!-- <label for="msg">پیام</label>
+  <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea> -->
+
+  <!-- ضداسپم (مخفی) -->
+  <!-- <input type="text" name="honeypot" style="position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" /> -->
+
+  <!-- اطلاعات کمکی -->
+  <!-- <input type="hidden" name="user_agent" value="" />
+  <input type="hidden" name="referrer" value="" /> -->
+<!-- Cloudflare Turnstile widget -->
+<!-- <div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
+
+  <button class="btn primary" type="submit">ارسال پیام</button>
+  <p id="formStatus" class="muted" style="margin-top:8px"></p>
+</form> -->
+
 <form id="contactForm" aria-label="فرم تماس" method="post" novalidate>
   <h2 id="contact-title" class="section-title">ارتباط با ما</h2>
 
   <label for="name">نام</label>
   <input id="name" name="name" type="text" placeholder="نام شما" required />
 
-  <label for="email">تماس همراه</label>
-  <input id="email" name="email" type="email" placeholder="تلفن همراه" required />
+  <label for="phone">شماره تماس</label>
+  <input id="phone" name="phone" type="tel" placeholder="مثلاً 09123456789" required />
 
   <label for="msg">پیام</label>
   <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea>
@@ -287,19 +326,6 @@
   <!-- اطلاعات کمکی -->
   <input type="hidden" name="user_agent" value="" />
   <input type="hidden" name="referrer" value="" />
-
-  <!-- فیلد پلن انتخاب‌شده -->
-  <label for="selectedPlan">پلن انتخابی</label>
-<input
-  id="selectedPlan"
-  name="selected_plan"
-  type="text"
-  placeholder="هنوز پلنی انتخاب نشده"
-  readonly
-  aria-readonly="true"
-  autocomplete="off"
-/>
-
 
   <!-- Cloudflare Turnstile -->
   <div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
