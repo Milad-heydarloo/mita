@@ -283,14 +283,39 @@
         </form> -->
 
         
+<!-- <form id="contactForm" aria-label="فرم تماس" method="post" novalidate>
+  <h2 id="contact-title" class="section-title">ارتباط با ما</h2> -->
+
+  <!-- <label for="name">نام</label>
+  <input id="name" name="name" type="text" placeholder="نام شما" required /> -->
+
+  <!-- <label for="email">ایمیل</label>
+  <input id="email" name="email" type="email" placeholder="your-email@domain.com" required /> -->
+
+  <!-- <label for="msg">پیام</label>
+  <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea> -->
+
+  <!-- ضداسپم (مخفی) -->
+  <!-- <input type="text" name="honeypot" style="position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" /> -->
+
+  <!-- اطلاعات کمکی -->
+  <!-- <input type="hidden" name="user_agent" value="" />
+  <input type="hidden" name="referrer" value="" /> -->
+<!-- Cloudflare Turnstile widget -->
+<!-- <div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
+
+  <button class="btn primary" type="submit">ارسال پیام</button>
+  <p id="formStatus" class="muted" style="margin-top:8px"></p>
+</form> -->
+
 <form id="contactForm" aria-label="فرم تماس" method="post" novalidate>
   <h2 id="contact-title" class="section-title">ارتباط با ما</h2>
 
   <label for="name">نام</label>
   <input id="name" name="name" type="text" placeholder="نام شما" required />
 
-  <label for="email">ایمیل</label>
-  <input id="email" name="email" type="email" placeholder="your-email@domain.com" required />
+  <label for="phone">شماره تماس</label>
+  <input id="phone" name="phone" type="tel" placeholder="مثلاً 09123456789" required />
 
   <label for="msg">پیام</label>
   <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea>
@@ -301,8 +326,9 @@
   <!-- اطلاعات کمکی -->
   <input type="hidden" name="user_agent" value="" />
   <input type="hidden" name="referrer" value="" />
-<!-- Cloudflare Turnstile widget -->
-<div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
+
+  <!-- Cloudflare Turnstile -->
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
 
   <button class="btn primary" type="submit">ارسال پیام</button>
   <p id="formStatus" class="muted" style="margin-top:8px"></p>

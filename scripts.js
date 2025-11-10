@@ -274,61 +274,126 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
+  // (function () {
+  //   const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzMi1Z1_QjW1EKOOteZ5GkrO8CLEcqpzFb8FzZaDXc1ZxBb-ELx8oNWVnhJZzQytOugSg/exec';
+
+  //   const form = document.getElementById('contactForm');
+  //   const statusEl = document.getElementById('formStatus');
+
+  //   // پر کردن hiddenها
+  //   const ua = form.querySelector('input[name="user_agent"]');
+  //   const rf = form.querySelector('input[name="referrer"]');
+  //   if (ua) ua.value = navigator.userAgent;
+  //   if (rf) rf.value = document.referrer || location.href;
+
+  //   form.addEventListener('submit', async function (e) {
+  //     e.preventDefault();
+
+  //     // ضداسپم: اگر ربات پرش کرد، ارسال نکن ولی پیام موفقیت بده
+  //     const hp = form.querySelector('input[name="honeypot"]');
+  //     if (hp && hp.value) {
+  //       statusEl.textContent = 'پیام شما ثبت شد. 🌟';
+  //       form.reset();
+  //       return;
+  //     }
+
+  //     // اعتبارسنجی ساده
+  //     const name = form.name.value.trim();
+  //     const email = form.email.value.trim();
+  //     const message = form.message.value.trim();
+  //     if (!name || !email || !message) {
+  //       statusEl.textContent = 'لطفاً همه فیلدها را پر کنید.';
+  //       return;
+  //     }
+
+  //     statusEl.textContent = 'در حال ارسال...';
+
+  //     try {
+  //       const formData = new FormData(form);
+  //       const res = await fetch(WEB_APP_URL, { method: 'POST', body: formData });
+
+  //       let ok = res.ok;
+  //       try {
+  //         const data = await res.json();
+  //         if (typeof data?.ok !== 'undefined') ok = !!data.ok;
+  //       } catch (_) {}
+
+  //       if (ok) {
+  //         statusEl.textContent = 'پیام شما با موفقیت ثبت شد. 🌟';
+  //         form.reset();
+  //       } else {
+  //         statusEl.textContent = 'ارسال ناموفق بود. دوباره تلاش کنید.';
+  //       }
+  //     } catch (err) {
+  //       statusEl.textContent = 'خطا در ارتباط. اتصال اینترنت/فیلترشکن را چک کنید.';
+  //     }
+  //   });
+  // })();
+
   (function () {
-    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzMi1Z1_QjW1EKOOteZ5GkrO8CLEcqpzFb8FzZaDXc1ZxBb-ELx8oNWVnhJZzQytOugSg/exec';
+  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzMi1Z1_QjW1EKOOteZ5GkrO8CLEcqpzFb8FzZaDXc1ZxBb-ELx8oNWVnhJZzQytOugSg/exec';
 
-    const form = document.getElementById('contactForm');
-    const statusEl = document.getElementById('formStatus');
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('formStatus');
+  if (!form || !statusEl) return;
 
-    // پر کردن hiddenها
-    const ua = form.querySelector('input[name="user_agent"]');
-    const rf = form.querySelector('input[name="referrer"]');
-    if (ua) ua.value = navigator.userAgent;
-    if (rf) rf.value = document.referrer || location.href;
+  const ua = form.querySelector('input[name="user_agent"]');
+  const rf = form.querySelector('input[name="referrer"]');
+  if (ua) ua.value = navigator.userAgent;
+  if (rf) rf.value = document.referrer || location.href;
 
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    statusEl.textContent = '';
 
-      // ضداسپم: اگر ربات پرش کرد، ارسال نکن ولی پیام موفقیت بده
-      const hp = form.querySelector('input[name="honeypot"]');
-      if (hp && hp.value) {
-        statusEl.textContent = 'پیام شما ثبت شد. 🌟';
+    const hp = form.querySelector('input[name="honeypot"]');
+    if (hp && hp.value) {
+      statusEl.textContent = 'پیام شما ثبت شد. 🌟';
+      form.reset();
+      return;
+    }
+
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !phone || !message) {
+      statusEl.textContent = 'لطفاً همه فیلدها را کامل پر کنید.';
+      return;
+    }
+
+    const turnstileField = form.querySelector('input[name="cf-turnstile-response"]');
+    if (!turnstileField || !turnstileField.value) {
+      statusEl.textContent = 'لطفاً تیک امنیتی را بزنید.';
+      return;
+    }
+
+    statusEl.textContent = 'در حال ارسال... ⏳';
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch(WEB_APP_URL, { method: 'POST', body: formData });
+      const data = await res.json();
+
+      if (data.ok) {
+        statusEl.textContent = data.message || 'پیام شما با موفقیت ثبت شد. 🌟';
         form.reset();
-        return;
+        if (window.turnstile) turnstile.reset();
+      } else {
+        statusEl.textContent =
+          data.message ||
+          'ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.';
+        if (window.turnstile) turnstile.reset();
       }
+    } catch (err) {
+      statusEl.textContent =
+        'خطا در برقراری ارتباط. لطفاً اتصال اینترنت خود را بررسی کنید.';
+      if (window.turnstile) turnstile.reset();
+    }
+  });
+})();
 
-      // اعتبارسنجی ساده
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-      if (!name || !email || !message) {
-        statusEl.textContent = 'لطفاً همه فیلدها را پر کنید.';
-        return;
-      }
 
-      statusEl.textContent = 'در حال ارسال...';
-
-      try {
-        const formData = new FormData(form);
-        const res = await fetch(WEB_APP_URL, { method: 'POST', body: formData });
-
-        let ok = res.ok;
-        try {
-          const data = await res.json();
-          if (typeof data?.ok !== 'undefined') ok = !!data.ok;
-        } catch (_) {}
-
-        if (ok) {
-          statusEl.textContent = 'پیام شما با موفقیت ثبت شد. 🌟';
-          form.reset();
-        } else {
-          statusEl.textContent = 'ارسال ناموفق بود. دوباره تلاش کنید.';
-        }
-      } catch (err) {
-        statusEl.textContent = 'خطا در ارتباط. اتصال اینترنت/فیلترشکن را چک کنید.';
-      }
-    });
-  })();
 
 
 
