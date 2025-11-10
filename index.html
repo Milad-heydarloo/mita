@@ -287,8 +287,20 @@
   <!-- اطلاعات کمکی -->
   <input type="hidden" name="user_agent" value="" />
   <input type="hidden" name="referrer" value="" />
-<!-- Cloudflare Turnstile widget -->
-<div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
+
+  <!-- فیلد پلن انتخاب‌شده -->
+  <label for="selectedPlan">پلن انتخاب‌شده</label>
+  <input
+    type="text"
+    id="selectedPlan"
+    name="selected_plan"
+    readonly
+    placeholder="هنوز پلنی انتخاب نشده"
+    style="margin-top:8px;opacity:0.8;cursor:not-allowed;"
+  />
+
+  <!-- Cloudflare Turnstile -->
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
 
   <button class="btn primary" type="submit">ارسال پیام</button>
   <p id="formStatus" class="muted" style="margin-top:8px"></p>
