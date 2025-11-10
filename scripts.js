@@ -329,14 +329,15 @@ document.addEventListener('DOMContentLoaded', function(){
   //     }
   //   });
   // })();
-
-  (function () {
+(function () {
+  // آدرس Web App فعلی (جدیدترین Deployment لینک /exec)
   const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzMi1Z1_QjW1EKOOteZ5GkrO8CLEcqpzFb8FzZaDXc1ZxBb-ELx8oNWVnhJZzQytOugSg/exec';
 
   const form = document.getElementById('contactForm');
   const statusEl = document.getElementById('formStatus');
-  if (!form || !statusEl) return;
+  if (!form) return;
 
+  // مقداردهی hiddenها
   const ua = form.querySelector('input[name="user_agent"]');
   const rf = form.querySelector('input[name="referrer"]');
   if (ua) ua.value = navigator.userAgent;
@@ -344,51 +345,56 @@ document.addEventListener('DOMContentLoaded', function(){
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    statusEl.textContent = '';
 
+    // هانی‌پات ضداسپم
     const hp = form.querySelector('input[name="honeypot"]');
     if (hp && hp.value) {
       statusEl.textContent = 'پیام شما ثبت شد. 🌟';
       form.reset();
+      try { turnstile && turnstile.reset(); } catch(_) {}
       return;
     }
 
-    const name = form.name.value.trim();
-    const phone = form.phone.value.trim();
-    const message = form.message.value.trim();
-
+    // اعتبارسنجی ساده فرانت
+    const name = (form.name?.value || '').trim();
+    const phone = (form.phone?.value || '').trim();
+    const message = (form.message?.value || '').trim();
     if (!name || !phone || !message) {
-      statusEl.textContent = 'لطفاً همه فیلدها را کامل پر کنید.';
+      statusEl.textContent = 'لطفاً نام، شماره تماس و پیام را وارد کنید.';
       return;
     }
 
-    const turnstileField = form.querySelector('input[name="cf-turnstile-response"]');
-    if (!turnstileField || !turnstileField.value) {
-      statusEl.textContent = 'لطفاً تیک امنیتی را بزنید.';
+    // بررسی اینکه Turnstile توکن را تزریق کرده
+    const tsField = form.querySelector('input[name="cf-turnstile-response"]');
+    if (!tsField || !tsField.value) {
+      statusEl.textContent = 'لطفاً اعتبارسنجی امنیتی را تکمیل کنید.';
       return;
     }
 
-    statusEl.textContent = 'در حال ارسال... ⏳';
+    statusEl.textContent = 'در حال ارسال...';
 
     try {
       const formData = new FormData(form);
       const res = await fetch(WEB_APP_URL, { method: 'POST', body: formData });
-      const data = await res.json();
 
-      if (data.ok) {
-        statusEl.textContent = data.message || 'پیام شما با موفقیت ثبت شد. 🌟';
-        form.reset();
-        if (window.turnstile) turnstile.reset();
+      let payload = null;
+      try { payload = await res.json(); } catch (_) {}
+
+      // اگر سرور پیام فارسی برگرداند، همان را نمایش ده
+      if (payload && typeof payload.message === 'string') {
+        statusEl.textContent = payload.message;
+      } else if (res.ok) {
+        statusEl.textContent = 'پیام شما با موفقیت ثبت شد. 🌟';
       } else {
-        statusEl.textContent =
-          data.message ||
-          'ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.';
-        if (window.turnstile) turnstile.reset();
+        statusEl.textContent = 'ارسال پیام ناموفق بود. لطفاً دوباره تلاش کنید.';
+      }
+
+      if (payload?.ok || res.ok) {
+        form.reset();
+        try { turnstile && turnstile.reset(); } catch(_) {}
       }
     } catch (err) {
-      statusEl.textContent =
-        'خطا در برقراری ارتباط. لطفاً اتصال اینترنت خود را بررسی کنید.';
-      if (window.turnstile) turnstile.reset();
+      statusEl.textContent = 'خطا در ارتباط. اتصال اینترنت/فیلترشکن را بررسی کنید.';
     }
   });
 })();

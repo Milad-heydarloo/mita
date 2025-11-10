@@ -315,7 +315,9 @@
   <input id="name" name="name" type="text" placeholder="نام شما" required />
 
   <label for="phone">شماره تماس</label>
-  <input id="phone" name="phone" type="tel" placeholder="مثلاً 09123456789" required />
+  <input id="phone" name="phone" type="tel"
+         inputmode="tel" dir="ltr"
+         placeholder="09xxxxxxxxx" required />
 
   <label for="msg">پیام</label>
   <textarea id="msg" name="message" rows="5" placeholder="متن پیام شما" required></textarea>
@@ -327,12 +329,15 @@
   <input type="hidden" name="user_agent" value="" />
   <input type="hidden" name="referrer" value="" />
 
-  <!-- Cloudflare Turnstile -->
-  <div class="cf-turnstile" data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn" data-theme="auto"></div>
+  <!-- Cloudflare Turnstile widget -->
+  <div class="cf-turnstile"
+       data-sitekey="0x4AAAAAACAJCWUtIaXUKRDn"
+       data-theme="auto"></div>
 
   <button class="btn primary" type="submit">ارسال پیام</button>
   <p id="formStatus" class="muted" style="margin-top:8px"></p>
 </form>
+
 
 
       </div>
